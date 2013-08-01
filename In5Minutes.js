@@ -11,6 +11,8 @@ else {
 function releasetheKraken() {  
     // The Kraken has been released, master!    
     alert("hello world");
+    
+    $("a, button, input[type='submit']")
 }  
 
 
