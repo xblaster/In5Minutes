@@ -1,18 +1,38 @@
-if (!($ = window.jQuery)) { // typeof jQuery=='undefined' works too  
-    script = document.createElement( 'script' );  
-   script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';   
-    script.onload=releasetheKraken;  
-    document.body.appendChild(script);  
-}   
-else {  
-    releasetheKraken();  
-}  
-  
 function releasetheKraken() {  
     // The Kraken has been released, master!    
-    alert("hello world");
     
-    $("a, button, input[type='submit']")
+    var selectedElement;
+	
+	var button = $("<button>In 5 minutes</button");
+	button.click(function() {
+		setTimeout( function() {
+			selectedElement.trigger("click");
+		}, 500);
+	});
+	
+	
+    $("a, button, input[type='submit']").each(function(index, Element) {
+		var overlay = $("<div>x</div>");
+		//$(this).append(overlay);
+		overlay.prependTo($(this));
+		//$(this).css("opacity","0.5");
+		
+		overlay.css("position", "absolute");
+		overlay.css("background-color", "rgba(255,9,255,0.3)");
+		overlay.css("display", "block");
+		overlay.css("z-index", "9999999");
+		
+		overlay.width($(this).outerWidth(true));
+		console.log($(this).outerWidth(true));
+		overlay.height($(this).outerHeight("height"));
+		
+		/*overlay.click(function() {
+			selectedElement = overlay;
+			button.css("left", overlay.
+		});*/
+		
+		
+	});
 }  
 
-
+releasetheKraken();
