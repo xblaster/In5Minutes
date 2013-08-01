@@ -15,7 +15,7 @@ function releasetheKraken() {
 	
 	
     $("a, button, input[type='submit']").each(function(index, Element) {
-		var overlay = $("<div>x</div>");
+		var overlay = $("<a>x</a>");
 		//$(this).append(overlay);
 		overlay.prependTo($(this));
 		//$(this).css("opacity","0.5");
@@ -28,9 +28,10 @@ function releasetheKraken() {
 		overlay.width($(this).outerWidth(true));
 		overlay.height($(this).outerHeight("height"));
 		
-		overlay.click(function() {
+		overlay.click(function(event) {
+			event.stopPropagation();
 			selectedElement = overlay;
-			button.css("left", overlay.position()left+"px");
+			button.css("left", overlay.position().left+"px");
 			button.css("top", overlay.position().top+"px");;
 			button.show();
 		});
