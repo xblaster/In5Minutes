@@ -1,14 +1,17 @@
 function releasetheKraken() {  
     // The Kraken has been released, master!    
     
-    var selectedElement;
+	var selectedElement;
 	
-	var button = $("<button>In 5 minutes</button");
+	var button = $("<button>In 5 minutes</button>");
 	button.click(function() {
 		setTimeout( function() {
 			selectedElement.trigger("click");
 		}, 500);
 	});
+	
+	button.append("body");
+	button.hide();
 	
 	
     $("a, button, input[type='submit']").each(function(index, Element) {
@@ -23,13 +26,14 @@ function releasetheKraken() {
 		overlay.css("z-index", "9999999");
 		
 		overlay.width($(this).outerWidth(true));
-		console.log($(this).outerWidth(true));
 		overlay.height($(this).outerHeight("height"));
 		
-		/*overlay.click(function() {
+		overlay.click(function() {
 			selectedElement = overlay;
-			button.css("left", overlay.
-		});*/
+			button.css("left", overlay.position()left+"px");
+			button.css("top", overlay.position().top+"px");;
+			button.show();
+		});
 		
 		
 	});
