@@ -1,3 +1,42 @@
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<localRepository>d:/rnet_dev/m2-repo</localRepository>
+	<proxies>
+	<proxy>
+	<active>true</active>
+	<protocol>http</protocol>
+	<host>192.168.60.23</host>
+	<port>8080</port>
+ 	<username>ext00029</username> 
+ 	<password>Toto7890</password> 
+	<nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
+	</proxy>
+	</proxies>
+
+<!-- 	<mirrors> -->
+<!-- 		<mirror> -->
+<!-- 			This sends everything else to /public -->
+<!-- 			<id>nexus</id> -->
+<!-- 			<mirrorOf>*</mirrorOf> -->
+<!-- 			<url>http://rnetdev/nexus/content/groups/public</url> -->
+<!-- 		</mirror> -->
+<!-- 	</mirrors> -->
+<!-- 	<profiles> -->
+<!-- 		<profile> -->
+<!-- 			<id>nexus</id> -->
+<!-- 		</profile> -->
+<!-- 	</profiles> -->
+<!-- 	<activeProfiles> -->
+<!-- 		<activeProfile>nexus</activeProfile> -->
+<!-- 	</activeProfiles> -->
+</settings>
+
+
+
+
 function releasetheKraken() {  
     // The Kraken has been released, master!    
     
